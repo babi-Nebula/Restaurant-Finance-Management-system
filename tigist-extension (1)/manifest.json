@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Tigist Restaurant - ትግስት ሬስቶራንት",
+  "version": "1.0.0",
+  "description": "Restaurant management system for Tigist Restaurant - revenue, expenses, and profit tracking",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

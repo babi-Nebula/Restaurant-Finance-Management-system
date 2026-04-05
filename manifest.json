@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Tigist Restaurant — ገንዘብ አስተዳደር",
+  "version": "1.0.0",
+  "description": "የጥጅስት ሬስቶራንት ገቢ፣ ወጪ እና ትርፍ አስተዳደር።",
+  "action": {
+    "default_popup": "app.html",
+    "default_title": "Tigist Restaurant"
+  },
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;"
+  }
+}
