@@ -1,7 +1,7 @@
 /** @type {Record<string, Record<string, string>>} */
 export const STRINGS = {
   am: {
-    brand: "ጥጅስት ሬስቶራንት",
+    brand: "ትግስት ሬስቶራንት",
     setupSubtitle: "መጀመሪያ አስተዳዳሪ መለያ ይፍጠሩ",
     loginSubtitle: "ወደ ስርዓት ግባ",
     displayName: "ስም",
