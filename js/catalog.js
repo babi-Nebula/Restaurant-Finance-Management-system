@@ -1,14 +1,15 @@
-/** Menu for Tigist Restaurant — ids stable for saved prices */
+/** Menu for Tegest Restaurant — ids stable for saved prices */
 export const CATALOG = [
   {
     id: "hot",
     groupKey: "groupHot",
     items: [
-      { id: "coffee", defaultPrice: 25 },
+      { id: "coffee small", defaultPrice: 25 },
+      { id: "coffee big", defaultPrice: 30 },
       { id: "tea", defaultPrice: 15 },
       { id: "spritz", defaultPrice: 30 },
-      { id: "macchiato", defaultPrice: 35 },
-      { id: "ginger_tea", defaultPrice: 20 },
+      { id: "macchiato", defaultPrice: 40 },
+      { id: "ginger_tea", defaultPrice: 35 },
     ],
   },
   {
@@ -16,7 +17,7 @@ export const CATALOG = [
     groupKey: "groupFood",
     items: [
       { id: "pasta", defaultPrice: 120 },
-      { id: "rice", defaultPrice: 100 },
+      { id: "rice", defaultPrice: 120 },
     ],
   },
   {
@@ -40,7 +41,7 @@ export const ITEM_LABELS = {
   am: {
     coffee: "ቡን",
     tea: "ሻይ",
-    spritz: "ስፕሪትዝ",
+    spritz: "ስፕሪስስ",
     macchiato: "ማኪያቶ",
     ginger_tea: "ዝንጅብል ሻይ",
     pasta: "ፓስታ",

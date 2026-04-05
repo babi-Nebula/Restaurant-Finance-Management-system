@@ -51,9 +51,12 @@ export const STRINGS = {
     ebirrVerified: "ክፍያ ተረጋግጧል።",
     ebirrSimulated: "(ማሳያ — ከኢ-ብር ጋር ተገናኝቶ እውነተኛ ውሂብ ይመጣል።)",
     cartEmpty: "ቅዳ ባዶ ነው።",
+    clearAllHistory: "የታሪክ ውሂብ ሁሉንም ሰርዝ",
+    clearAllHistoryConfirm:
+      "ሁሉንም የሽያጭ እና የወጪ መዝገቦች ለዘላለም ይሰረዛሉ። መቀጠል ይፈልጋሉ?",
   },
   om: {
-    brand: "Mana Nyaataa Tigist",
+    brand: "Mana Nyaataa Tegest",
     setupSubtitle: "Akkaataa bulchiinsaa jalqaba uumi",
     loginSubtitle: "Gidduu seeni",
     displayName: "Maqaa",
@@ -103,6 +106,9 @@ export const STRINGS = {
     ebirrVerified: "Kaffaltiin mirkanaa'eera.",
     ebirrSimulated: "(Mul'ata — waliin E-Birr walitti hidhamuun odeeffannoo dhugaa ni dhufa.)",
     cartEmpty: "Gaabateen duwwaa dha.",
+    clearAllHistory: "Seenaa hunda haquu",
+    clearAllHistoryConfirm:
+      "Gurgurtaa fi baasii hundi bara baraan ni haquu. Itti fufuu barbaaddaa?",
   },
 };
 

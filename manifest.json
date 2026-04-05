@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Tigist Restaurant — ገንዘብ አስተዳደር",
+  "name": "Tegest Restaurant — ገንዘብ አስተዳደር",
   "version": "1.0.0",
   "description": "የትግስት ሬስቶራንት ገቢ፣ ወጪ እና ትርፍ አስተዳደር።",
   "action": {
     "default_popup": "app.html",
-    "default_title": "Tigist Restaurant"
+    "default_title": "Tegest Restaurant"
   },
   "permissions": ["storage"],
   "content_security_policy": {

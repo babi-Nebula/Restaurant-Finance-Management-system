@@ -60,23 +60,15 @@ function formatMoney(n) {
 
 function setTheme(theme) {
   state.theme = theme;
-  document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
-  const icon = theme === "dark" ? "☀️" : "🌙";
-  const ti = $("#theme-icon");
-  const mi = $("#main-theme-icon");
-  if (ti) ti.textContent = icon;
-  if (mi) mi.textContent = icon;
-  const tip = theme === "dark" ? t(state.lang, "themeLight") : t(state.lang, "themeDark");
-  const btn = $("#btn-theme-toggle");
-  if (btn) {
+  const isDark = theme === "dark";
+  document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+  document.querySelectorAll(".theme-dual .moon-icon").forEach((el) => el.classList.toggle("hidden", isDark));
+  document.querySelectorAll(".theme-dual .sun-icon").forEach((el) => el.classList.toggle("hidden", !isDark));
+  const tip = isDark ? t(state.lang, "themeLight") : t(state.lang, "themeDark");
+  document.querySelectorAll(".theme-dual").forEach((btn) => {
     btn.title = tip;
     btn.setAttribute("aria-label", tip);
-  }
-  const mb = $("#btn-main-theme");
-  if (mb) {
-    mb.title = tip;
-    mb.setAttribute("aria-label", tip);
-  }
+  });
 }
 
 function showView(name) {
@@ -131,7 +123,9 @@ function renderCatalog(data) {
       const add = document.createElement("button");
       add.type = "button";
       add.className = "btn primary btn-add";
-      add.textContent = lang === "om" ? "Dabaluu" : "ጨምር";
+      add.innerHTML =
+        '<svg class="icon btn-leading" aria-hidden="true"><use href="#i-plus"/></svg><span></span>';
+      add.querySelector("span").textContent = lang === "om" ? "Dabaluu" : "ጨምር";
       add.addEventListener("click", () => {
         const v = parseFloat(price.value);
         if (Number.isNaN(v) || v < 0) return;
@@ -174,7 +168,8 @@ function renderCart() {
     const rm = document.createElement("button");
     rm.type = "button";
     rm.className = "remove";
-    rm.textContent = state.lang === "om" ? "Haquu" : "ሰርዝ";
+    rm.setAttribute("aria-label", state.lang === "om" ? "Haquu" : "ሰርዝ");
+    rm.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>';
     rm.addEventListener("click", () => {
       state.cart = state.cart.filter((x) => x.key !== line.key);
       renderCart();
@@ -210,12 +205,28 @@ function renderHistory(data) {
   ul.innerHTML = "";
   if (!list.length) {
     const li = document.createElement("li");
+    li.className = "history-empty";
     li.textContent = t(state.lang, "noHistory");
     ul.appendChild(li);
     return;
   }
   list.forEach((tx) => {
     const li = document.createElement("li");
+    const row = document.createElement("div");
+    row.className = "history-row";
+    const icoWrap = document.createElement("div");
+    icoWrap.className = "history-ico";
+    let iconId = "i-cash";
+    if (tx.kind === "expense") {
+      icoWrap.classList.add("kind-expense");
+      iconId = "i-wallet";
+    } else if (tx.kind === "sale_ebirr") {
+      icoWrap.classList.add("kind-ebirr");
+      iconId = "i-mobile-pay";
+    }
+    icoWrap.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#${iconId}"/></svg>`;
+    const body = document.createElement("div");
+    body.className = "history-body";
     const kindLabel =
       tx.kind === "expense"
         ? t(state.lang, "expenses")
@@ -232,8 +243,11 @@ function renderHistory(data) {
     if (tx.phone) extra += ` · ${tx.phone}`;
     if (tx.note) extra += ` · ${tx.note}`;
     meta.textContent = extra;
-    li.appendChild(main);
-    li.appendChild(meta);
+    body.appendChild(main);
+    body.appendChild(meta);
+    row.appendChild(icoWrap);
+    row.appendChild(body);
+    li.appendChild(row);
     ul.appendChild(li);
   });
 }
@@ -467,6 +481,15 @@ async function init() {
     /** @type {HTMLFormElement} */ ($("#form-expense")).reset();
     refreshDashboard({ ...data, transactions });
     renderHistory({ ...data, transactions });
+  });
+
+  $("#btn-clear-all-history")?.addEventListener("click", async () => {
+    if (!confirm(t(state.lang, "clearAllHistoryConfirm"))) return;
+    const data = await loadData();
+    await saveData({ transactions: [] });
+    const next = { ...data, transactions: [] };
+    refreshDashboard(next);
+    renderHistory(next);
   });
 }
 

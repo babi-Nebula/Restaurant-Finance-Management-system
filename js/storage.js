@@ -4,6 +4,14 @@ const STORAGE_KEY = "tigist_finance_v1";
 /** @typedef {{ id: string, ts: number, kind: 'sale_cash'|'sale_ebirr'|'expense', total: number, lines?: Array<{ itemId: string, label: string, unitPrice: number, qty: number }>, payerName?: string, phone?: string, note?: string }} TxRow */
 /** @typedef {{ users: UserRow[], transactions: TxRow[], prices: Record<string, number>, prefs: { theme: 'light'|'dark', lang: 'am'|'om' } }} AppData */
 
+function useExtensionStorage() {
+  try {
+    return typeof chrome !== "undefined" && chrome.storage != null && chrome.storage.local != null;
+  } catch {
+    return false;
+  }
+}
+
 function defaultData() {
   return {
     users: [],
@@ -13,18 +21,42 @@ function defaultData() {
   };
 }
 
+/** @returns {Promise<AppData | null>} */
+async function readStored() {
+  if (useExtensionStorage()) {
+    const raw = await chrome.storage.local.get(STORAGE_KEY);
+    return raw[STORAGE_KEY] ?? null;
+  }
+  try {
+    const s = localStorage.getItem(STORAGE_KEY);
+    if (!s) return null;
+    return JSON.parse(s);
+  } catch {
+    return null;
+  }
+}
+
+/** @param {AppData} data */
+async function writeStored(data) {
+  if (useExtensionStorage()) {
+    await chrome.storage.local.set({ [STORAGE_KEY]: data });
+  } else {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+}
+
 export async function loadData() {
-  const raw = await chrome.storage.local.get(STORAGE_KEY);
   const base = defaultData();
-  if (!raw[STORAGE_KEY]) return base;
-  return { ...base, ...raw[STORAGE_KEY], prefs: { ...base.prefs, ...raw[STORAGE_KEY].prefs } };
+  const raw = await readStored();
+  if (!raw) return base;
+  return { ...base, ...raw, prefs: { ...base.prefs, ...raw.prefs } };
 }
 
 /** @param {Partial<AppData>} patch */
 export async function saveData(patch) {
   const cur = await loadData();
   const next = { ...cur, ...patch, prefs: { ...cur.prefs, ...patch.prefs } };
-  await chrome.storage.local.set({ [STORAGE_KEY]: next });
+  await writeStored(next);
   return next;
 }
 

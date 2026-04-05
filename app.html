@@ -3,172 +3,344 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tigist Restaurant</title>
+  <title>Tegest Restaurant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="sprite-root">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3l1.42 1.42M2 12h2m16 0h2M6.35 17.66l-1.42 1.42M19.07 4.93l-1.42 1.42"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></symbol>
+      <symbol id="i-dashboard" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 3h8v9H3zM13 3h8v5h-8zM13 12h8v9h-8zM3 16h8v5H3z"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1" fill="currentColor"/><circle cx="18" cy="20" r="1" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 5M7 13l-1.3 2.6A1 1 0 007 17h10"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 12V8H6a2 2 0 010-4h14v4"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6v12a2 2 0 002 2h14v-6"/><path fill="none" stroke="currentColor" stroke-width="2" d="M18 12h.01"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2M12 21a9 9 0 100-9.5M4 12H2m0 0l2.5-2.5M2 12l2.5 2.5"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7 11V7a5 5 0 0110 0v4"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v8a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 2v2m6-2v2m6-2v2"/></symbol>
+      <symbol id="i-trend-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M23 6l-9.5 9.5-5-5L1 18"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M17 6h6v6"/></symbol>
+      <symbol id="i-trend-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M23 18l-9.5-9.5-5 5L1 6"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M17 18h6v-6"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.2 4.2L17 8.5l-3.8 1.3L12 14l-1.2-4.2L7 8.5l3.8-1.3L12 3zM19 15l.6 2.1 2.1.6-2.1.6-.6 2.1-.6-2.1-2.1-.6 2.1-.6.6-2.1z"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M8 6V4h8v2m-1 0v14a2 2 0 01-2 2H9a2 2 0 01-2-2V6h8zM10 11v6M14 11v6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M22 16.92v2a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h2a2 2 0 012 1.72c.12.86.3 1.7.54 2.5a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.58-1.11a2 2 0 012.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0122 16.92z"/></symbol>
+      <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 12h.01M18 12h.01"/></symbol>
+      <symbol id="i-mobile-pay" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 18h.01M9 6h6"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+      <symbol id="i-login" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+      <symbol id="i-note" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path fill="none" stroke="currentColor" stroke-width="2" d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+      <symbol id="i-broom" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 22h16M6 18v-1a2 2 0 012-2h8a2 2 0 012 2v1M9 10l6 6M12 2l2 8-3 3-3-3 2-8z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-calculator" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h2m4 0h2"/></symbol>
+      <symbol id="i-shield-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12l2 2 4-4"/></symbol>
+    </defs>
+  </svg>
+
   <div id="app" class="app">
     <!-- Setup (first run) -->
     <section id="view-setup" class="view hidden" aria-hidden="true">
-      <header class="header">
-        <h1 class="brand" data-i18n="brand"> ትግስት ሬስቶራንት</h1>
+      <header class="hero">
+        <div class="hero-badge" aria-hidden="true">
+          <svg class="icon icon-xl"><use href="#i-cup"/></svg>
+        </div>
+        <h1 class="brand"><span data-i18n="brand">ትግስት ሬስቶራንት</span></h1>
         <p class="subtitle" data-i18n="setupSubtitle">መጀመሪያ አስተዳዳሪ መለያ ይፍጠሩ</p>
       </header>
-      <form id="form-setup" class="card form">
-        <label>
-          <span data-i18n="displayName">ስም</span>
-          <input type="text" id="setup-name" required autocomplete="username" />
+      <form id="form-setup" class="card card-elevated form glass">
+        <label class="field">
+          <span class="field-label">
+            <svg class="icon icon-label" aria-hidden="true"><use href="#i-user"/></svg>
+            <span data-i18n="displayName">ስም</span>
+          </span>
+          <div class="input-wrap">
+            <input type="text" id="setup-name" required autocomplete="username" />
+          </div>
         </label>
-        <label>
-          <span data-i18n="password">የይለፍ ቃል</span>
-          <input type="password" id="setup-password" required autocomplete="new-password" minlength="4" />
+        <label class="field">
+          <span class="field-label">
+            <svg class="icon icon-label" aria-hidden="true"><use href="#i-lock"/></svg>
+            <span data-i18n="password">የይለፍ ቃል</span>
+          </span>
+          <div class="input-wrap">
+            <input type="password" id="setup-password" required autocomplete="new-password" minlength="4" />
+          </div>
         </label>
-        <label>
-          <span data-i18n="language">ቋንቋ</span>
-          <select id="setup-lang">
-            <option value="am">አማርኛ</option>
-            <option value="om">Afaan Oromoo</option>
-          </select>
+        <label class="field">
+          <span class="field-label">
+            <svg class="icon icon-label" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span data-i18n="language">ቋንቋ</span>
+          </span>
+          <div class="input-wrap input-with-icon">
+            <svg class="icon input-icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <select id="setup-lang">
+              <option value="am">አማርኛ</option>
+              <option value="om">Afaan Oromoo</option>
+            </select>
+          </div>
         </label>
-        <button type="submit" class="btn primary" data-i18n="createAccount">መለያ ፍጠር</button>
+        <button type="submit" class="btn primary btn-glow btn-block">
+          <svg class="icon btn-leading" aria-hidden="true"><use href="#i-shield-check"/></svg>
+          <span data-i18n="createAccount">መለያ ፍጠር</span>
+        </button>
       </form>
     </section>
 
     <!-- Login -->
     <section id="view-login" class="view" aria-hidden="false">
-      <header class="header">
-        <h1 class="brand" data-i18n="brand">ትግስት ሬስቶራንት</h1>
+      <header class="hero">
+        <div class="hero-badge" aria-hidden="true">
+          <svg class="icon icon-xl"><use href="#i-cup"/></svg>
+        </div>
+        <h1 class="brand"><span data-i18n="brand">ትግስት ሬስቶራንት</span></h1>
         <p class="subtitle" data-i18n="loginSubtitle">ወደ ስርዓት ግባ</p>
       </header>
-      <div class="toolbar login-toolbar">
-        <button type="button" id="btn-theme-toggle" class="btn ghost icon-btn" title="" aria-label="">
-          <span class="theme-icon" id="theme-icon">🌙</span>
+      <div class="toolbar login-toolbar pill-bar">
+        <button type="button" id="btn-theme-toggle" class="btn ghost icon-btn theme-dual" title="" aria-label="">
+          <svg class="icon moon-icon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon sun-icon hidden" aria-hidden="true"><use href="#i-sun"/></svg>
         </button>
-        <select id="login-lang" class="lang-select" aria-label="Language">
-          <option value="am">አማርኛ</option>
-          <option value="om">Afaan Oromoo</option>
-        </select>
+        <div class="lang-wrap">
+          <svg class="icon lang-ico" aria-hidden="true"><use href="#i-globe"/></svg>
+          <select id="login-lang" class="lang-select" aria-label="Language">
+            <option value="am">አማርኛ</option>
+            <option value="om">Afaan Oromoo</option>
+          </select>
+        </div>
       </div>
-      <form id="form-login" class="card form">
-        <label>
-          <span data-i18n="displayName">ስም</span>
-          <input type="text" id="login-name" required autocomplete="username" />
+      <form id="form-login" class="card card-elevated form glass">
+        <label class="field">
+          <span class="field-label">
+            <svg class="icon icon-label" aria-hidden="true"><use href="#i-user"/></svg>
+            <span data-i18n="displayName">ስም</span>
+          </span>
+          <div class="input-wrap">
+            <input type="text" id="login-name" required autocomplete="username" />
+          </div>
         </label>
-        <label>
-          <span data-i18n="password">የይለፍ ቃል</span>
-          <input type="password" id="login-password" required autocomplete="current-password" />
+        <label class="field">
+          <span class="field-label">
+            <svg class="icon icon-label" aria-hidden="true"><use href="#i-lock"/></svg>
+            <span data-i18n="password">የይለፍ ቃል</span>
+          </span>
+          <div class="input-wrap">
+            <input type="password" id="login-password" required autocomplete="current-password" />
+          </div>
         </label>
         <p id="login-error" class="error hidden" role="alert"></p>
-        <button type="submit" class="btn primary" data-i18n="login">ግባ</button>
+        <button type="submit" class="btn primary btn-glow btn-block">
+          <svg class="icon btn-leading" aria-hidden="true"><use href="#i-login"/></svg>
+          <span data-i18n="login">ግባ</span>
+        </button>
       </form>
     </section>
 
     <!-- Main app -->
     <section id="view-main" class="view hidden" aria-hidden="true">
-      <header class="header compact">
-        <div>
-          <h1 class="brand small" data-i18n="brand">ትግስት ሬስቶራንት</h1>
-          <p class="user-line"><span data-i18n="loggedInAs">እንደ</span> <strong id="main-user-name"></strong></p>
+      <header class="header compact top-bar">
+        <div class="top-brand">
+          <div class="mini-logo" aria-hidden="true">
+            <svg class="icon"><use href="#i-cup"/></svg>
+          </div>
+          <div>
+            <h1 class="brand small"><span data-i18n="brand">ትግስት ሬስቶራንት</span></h1>
+            <p class="user-line">
+              <svg class="icon icon-inline" aria-hidden="true"><use href="#i-user"/></svg>
+              <span data-i18n="loggedInAs">እንደ</span>
+              <strong id="main-user-name"></strong>
+            </p>
+          </div>
         </div>
-        <div class="toolbar">
-          <select id="main-lang" class="lang-select">
-            <option value="am">አማርኛ</option>
-            <option value="om">Afaan Oromoo</option>
-          </select>
-          <button type="button" id="btn-main-theme" class="btn ghost icon-btn"><span id="main-theme-icon">🌙</span></button>
-          <button type="button" id="btn-logout" class="btn ghost" data-i18n="logout">ውጣ</button>
+        <div class="toolbar toolbar-tight">
+          <div class="lang-wrap lang-wrap-sm">
+            <svg class="icon lang-ico" aria-hidden="true"><use href="#i-globe"/></svg>
+            <select id="main-lang" class="lang-select">
+              <option value="am">አማርኛ</option>
+              <option value="om">Afaan Oromoo</option>
+            </select>
+          </div>
+          <button type="button" id="btn-main-theme" class="btn ghost icon-btn theme-dual" title="" aria-label="">
+            <svg class="icon moon-icon" aria-hidden="true"><use href="#i-moon"/></svg>
+            <svg class="icon sun-icon hidden" aria-hidden="true"><use href="#i-sun"/></svg>
+          </button>
+          <button type="button" id="btn-logout" class="btn ghost btn-pill">
+            <svg class="icon btn-leading" aria-hidden="true"><use href="#i-logout"/></svg>
+            <span data-i18n="logout">ውጣ</span>
+          </button>
         </div>
       </header>
 
       <nav class="tabs" role="tablist">
-        <button type="button" class="tab active" data-tab="dashboard" data-i18n="tabDashboard">ዳሽቦርድ</button>
-        <button type="button" class="tab" data-tab="sales" data-i18n="tabSales">ሽያጭ</button>
-        <button type="button" class="tab" data-tab="expenses" data-i18n="tabExpenses">ወጪዎች</button>
-        <button type="button" class="tab" data-tab="history" data-i18n="tabHistory">ታሪክ</button>
+        <button type="button" class="tab active" data-tab="dashboard">
+          <svg class="icon tab-ico" aria-hidden="true"><use href="#i-dashboard"/></svg>
+          <span data-i18n="tabDashboard">ዳሽቦርድ</span>
+        </button>
+        <button type="button" class="tab" data-tab="sales">
+          <svg class="icon tab-ico" aria-hidden="true"><use href="#i-cart"/></svg>
+          <span data-i18n="tabSales">ሽያጭ</span>
+        </button>
+        <button type="button" class="tab" data-tab="expenses">
+          <svg class="icon tab-ico" aria-hidden="true"><use href="#i-wallet"/></svg>
+          <span data-i18n="tabExpenses">ወጪዎች</span>
+        </button>
+        <button type="button" class="tab" data-tab="history">
+          <svg class="icon tab-ico" aria-hidden="true"><use href="#i-history"/></svg>
+          <span data-i18n="tabHistory">ታሪክ</span>
+        </button>
       </nav>
 
       <div id="panel-dashboard" class="panel active">
         <div class="stats-grid">
-          <div class="stat card">
+          <div class="stat card stat-card stat-revenue glass">
+            <div class="stat-icon" aria-hidden="true"><svg class="icon"><use href="#i-trend-up"/></svg></div>
             <span class="stat-label" data-i18n="revenue">ገቢ</span>
             <span class="stat-value" id="stat-revenue">0</span>
           </div>
-          <div class="stat card">
+          <div class="stat card stat-card stat-out glass">
+            <div class="stat-icon" aria-hidden="true"><svg class="icon"><use href="#i-trend-down"/></svg></div>
             <span class="stat-label" data-i18n="expenses">ወጪ</span>
             <span class="stat-value" id="stat-expenses">0</span>
           </div>
-          <div class="stat card highlight">
+          <div class="stat card stat-card stat-profit glass highlight">
+            <div class="stat-icon" aria-hidden="true"><svg class="icon"><use href="#i-sparkle"/></svg></div>
             <span class="stat-label" data-i18n="profit">ትርፍ</span>
             <span class="stat-value" id="stat-profit">0</span>
           </div>
         </div>
-        <p class="hint" data-i18n="dashboardHint">ዛሬ የተመዘገቡ ገቢ፣ ወጪ እና ትርፍ።</p>
+        <p class="hint hint-card">
+          <svg class="icon icon-inline" aria-hidden="true"><use href="#i-dashboard"/></svg>
+          <span data-i18n="dashboardHint">ዛሬ የተመዘገቡ ገቢ፣ ወጪ እና ትርፍ።</span>
+        </p>
       </div>
 
       <div id="panel-sales" class="panel hidden">
         <div class="sales-layout">
-          <div class="catalog card">
-            <h2 class="section-title" data-i18n="menuTitle">ምናሌ</h2>
+          <div class="catalog card card-elevated glass">
+            <h2 class="section-title title-with-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+              <span data-i18n="menuTitle">ምናሌ</span>
+            </h2>
             <div id="catalog-groups" class="catalog-groups"></div>
           </div>
-          <div class="cart card">
-            <h2 class="section-title" data-i18n="cartTitle">ስሌት / ቅዳ</h2>
+          <div class="cart card card-elevated glass">
+            <h2 class="section-title title-with-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg>
+              <span data-i18n="cartTitle">ስሌት / ቅዳ</span>
+            </h2>
             <ul id="cart-lines" class="cart-lines"></ul>
             <div class="cart-total">
-              <span data-i18n="total">ጠቅላላ</span>
+              <span class="cart-total-label">
+                <svg class="icon icon-inline" aria-hidden="true"><use href="#i-cash"/></svg>
+                <span data-i18n="total">ጠቅላላ</span>
+              </span>
               <strong id="cart-total">0</strong>
             </div>
             <div class="pay-row">
-              <button type="button" id="btn-pay-cash" class="btn secondary" data-i18n="payCash">ጥሬ ገንዘብ ይመዝገብ</button>
-              <button type="button" id="btn-pay-ebirr" class="btn primary" data-i18n="payEbirr">ኢ-ብር</button>
+              <button type="button" id="btn-pay-cash" class="btn secondary btn-block">
+                <svg class="icon btn-leading" aria-hidden="true"><use href="#i-cash"/></svg>
+                <span data-i18n="payCash">ጥሬ ገንዘብ ይመዝገብ</span>
+              </button>
+              <button type="button" id="btn-pay-ebirr" class="btn primary btn-glow btn-block">
+                <svg class="icon btn-leading" aria-hidden="true"><use href="#i-mobile-pay"/></svg>
+                <span data-i18n="payEbirr">ኢ-ብር</span>
+              </button>
             </div>
-            <button type="button" id="btn-clear-cart" class="btn ghost small" data-i18n="clearCart">ቅዳ አጽዳ</button>
+            <button type="button" id="btn-clear-cart" class="btn ghost small btn-block subtle">
+              <svg class="icon btn-leading" aria-hidden="true"><use href="#i-trash"/></svg>
+              <span data-i18n="clearCart">ቅዳ አጽዳ</span>
+            </button>
           </div>
         </div>
         <div id="modal-ebirr" class="modal hidden" role="dialog" aria-modal="true">
           <div class="modal-backdrop" data-close-modal></div>
-          <div class="modal-card card">
-            <h3 data-i18n="ebirrTitle">ኢ-ብር ክፍያ</h3>
+          <div class="modal-card card card-elevated glass modal-animate">
+            <h3 class="modal-title">
+              <svg class="icon" aria-hidden="true"><use href="#i-mobile-pay"/></svg>
+              <span data-i18n="ebirrTitle">ኢ-ብር ክፍያ</span>
+            </h3>
             <p class="hint" data-i18n="ebirrHint">የክፍያ ስልክ ቁጥር (የባለቤቱ) እና መጠን። ከተረጋገጠ የከፋይ ስም ይታያል።</p>
-            <label>
-              <span data-i18n="phone">ስልክ</span>
-              <input type="tel" id="ebirr-phone" placeholder="09xxxxxxxx" />
+            <label class="field">
+              <span class="field-label">
+                <svg class="icon icon-label" aria-hidden="true"><use href="#i-phone"/></svg>
+                <span data-i18n="phone">ስልክ</span>
+              </span>
+              <div class="input-wrap">
+                <input type="tel" id="ebirr-phone" placeholder="09xxxxxxxx" />
+              </div>
             </label>
-            <label>
-              <span data-i18n="amount">መጠን (ብር)</span>
-              <input type="number" id="ebirr-amount" min="0" step="0.01" />
+            <label class="field">
+              <span class="field-label">
+                <svg class="icon icon-label" aria-hidden="true"><use href="#i-cash"/></svg>
+                <span data-i18n="amount">መጠን (ብር)</span>
+              </span>
+              <div class="input-wrap">
+                <input type="number" id="ebirr-amount" min="0" step="0.01" />
+              </div>
             </label>
-            <button type="button" id="btn-ebirr-verify" class="btn secondary" data-i18n="verifyEbirr">አረጋግጥ</button>
+            <button type="button" id="btn-ebirr-verify" class="btn secondary btn-block">
+              <svg class="icon btn-leading" aria-hidden="true"><use href="#i-shield-check"/></svg>
+              <span data-i18n="verifyEbirr">አረጋግጥ</span>
+            </button>
             <div id="ebirr-result" class="ebirr-result hidden"></div>
             <div class="modal-actions">
-              <button type="button" class="btn ghost" data-close-modal data-i18n="cancel">ተወው</button>
-              <button type="button" id="btn-ebirr-confirm" class="btn primary hidden" data-i18n="confirmSale">ሽያጭ አረጋግጥ</button>
+              <button type="button" class="btn ghost" data-close-modal>
+                <span data-i18n="cancel">ተወው</span>
+              </button>
+              <button type="button" id="btn-ebirr-confirm" class="btn primary hidden">
+                <svg class="icon btn-leading" aria-hidden="true"><use href="#i-cart"/></svg>
+                <span data-i18n="confirmSale">ሽያጭ አረጋግጥ</span>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       <div id="panel-expenses" class="panel hidden">
-        <form id="form-expense" class="card form">
-          <h2 class="section-title" data-i18n="addExpense">ወጪ ጨምር</h2>
-          <label>
-            <span data-i18n="expenseDesc">መግለጫ</span>
-            <input type="text" id="expense-desc" required />
+        <form id="form-expense" class="card card-elevated form glass">
+          <h2 class="section-title title-with-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg>
+            <span data-i18n="addExpense">ወጪ ጨምር</span>
+          </h2>
+          <label class="field">
+            <span class="field-label">
+              <svg class="icon icon-label" aria-hidden="true"><use href="#i-note"/></svg>
+              <span data-i18n="expenseDesc">መግለጫ</span>
+            </span>
+            <div class="input-wrap">
+              <input type="text" id="expense-desc" required />
+            </div>
           </label>
-          <label>
-            <span data-i18n="amount">መጠን (ብር)</span>
-            <input type="number" id="expense-amount" min="0" step="0.01" required />
+          <label class="field">
+            <span class="field-label">
+              <svg class="icon icon-label" aria-hidden="true"><use href="#i-cash"/></svg>
+              <span data-i18n="amount">መጠን (ብር)</span>
+            </span>
+            <div class="input-wrap">
+              <input type="number" id="expense-amount" min="0" step="0.01" required />
+            </div>
           </label>
-          <button type="submit" class="btn primary" data-i18n="saveExpense">ወጪ አስቀምጥ</button>
+          <button type="submit" class="btn primary btn-glow btn-block">
+            <svg class="icon btn-leading" aria-hidden="true"><use href="#i-plus"/></svg>
+            <span data-i18n="saveExpense">ወጪ አስቀምጥ</span>
+          </button>
         </form>
       </div>
 
       <div id="panel-history" class="panel hidden">
-        <div class="card">
-          <h2 class="section-title" data-i18n="recentTransactions">የቅርብ ግብይቶች</h2>
+        <div class="card card-elevated glass">
+          <div class="history-card-head">
+            <h2 class="section-title title-with-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-history"/></svg>
+              <span data-i18n="recentTransactions">የቅርብ ግብይቶች</span>
+            </h2>
+            <button type="button" id="btn-clear-all-history" class="btn danger small btn-pill">
+              <svg class="icon btn-leading" aria-hidden="true"><use href="#i-broom"/></svg>
+              <span data-i18n="clearAllHistory">የታሪክ ውሂብ ሁሉንም ሰርዝ</span>
+            </button>
+          </div>
           <ul id="history-list" class="history-list"></ul>
         </div>
       </div>
